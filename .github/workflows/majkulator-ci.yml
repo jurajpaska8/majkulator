@@ -5,12 +5,12 @@ on:
     branches: [ "master" ]
     paths:
       - 'Majkulator/**'
-      - '.github/majkulator-ci.yml'
+      - '.github/workflows/majkulator-ci.yml'
   pull_request:
     branches: [ "master" ]
     paths:
       - 'Majkulator/**'
-      - '.github/majkulator-ci.yml'
+      - '.github/workflows/majkulator-ci.yml'
 jobs:
   calculate-version:
     name: Calculate Version
@@ -53,7 +53,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ./Aronia.Backend
-          file: ./Aronia.Backend/Aronia.Backend.Api/Dockerfile
+          context: ./Majkulator
+          file: ./Majkulator/Majkulator/Dockerfile
           push: true
-          tags: "offli/aronia-api:${{ needs.calculate-version.outputs.semVer }},offli/aronia-api:latest"
+          tags: "jurajpaska8/majkulator:${{ needs.calculate-version.outputs.semVer }},jurajpaska8/majkulator:latest"
