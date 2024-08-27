@@ -4,13 +4,13 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - 'Aronia.Backend/**'
-      - '.github/workflows/aronia-api-ci.yml'
+      - 'Majkulator/**'
+      - '.github/majkulator-ci.yml'
   pull_request:
     branches: [ "master" ]
     paths:
-      - 'Aronia.Backend/Aronia.Backend.Api/**'
-      - '.github/workflows/aronia-api-ci.yml'
+      - 'Majkulator/**'
+      - '.github/majkulator-ci.yml'
 jobs:
   calculate-version:
     name: Calculate Version
